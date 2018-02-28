@@ -5,6 +5,8 @@ import { TweenMax, Power3 } from 'gsap';
 import { Position } from './position.interface';
 import { Pixel } from './pixel.interface';
 import * as PIXI from 'pixi.js';
+import * as Web3 from 'web3';
+import * as Contract from 'truffle-contract';
 @Component({
   selector: 'app-place',
   templateUrl: './place.component.html',
@@ -106,7 +108,7 @@ export class PlaceComponent implements OnInit, AfterViewInit {
     //zoomOutButton.addEventListener("click", () => { toggleZoom({x: window.innerWidth / 2, y: window.innerHeight / 2}, false) });
 
   }
-  selectColor(event, color) {
+  selectColor(event, color, index) {
     if (this.selectedColor !== color) {
       this.selectedColor = color;
     } else {
